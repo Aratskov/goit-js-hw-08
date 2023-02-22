@@ -1,5 +1,13 @@
-// Add imports above this line
 import { galleryItems } from './gallery-items';
-// Change code below this line
+import renderImage from './render';
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
-console.log(galleryItems);
+const collectionGallery = document.querySelector('.gallery');
+collectionGallery.insertAdjacentHTML('afterbegin', renderImage(galleryItems));
+
+new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+  doubleTapZoom: 1,
+});

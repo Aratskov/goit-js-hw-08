@@ -7,7 +7,6 @@ const collectionGallery = document.querySelector('.gallery');
 collectionGallery.insertAdjacentHTML('afterbegin', renderImage(galleryItems));
 
 new SimpleLightbox('.gallery a', {
-  captionDelay: 250,
   captionsData: 'alt',
-  doubleTapZoom: 1,
+  captionDelay: 250
 });

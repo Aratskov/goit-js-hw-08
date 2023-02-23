@@ -16,7 +16,7 @@ if (formParcel) {
 form.addEventListener('submit', formSubmit);
 form.addEventListener('input', throttle(inputLocalData, 500));
 
-function inputLocalData({target : {name,value}}) {
+function inputLocalData({ target: { name, value } }) {
   formData[name] = value;
   save(KEY, formData);
 }
@@ -28,8 +28,8 @@ function setValue(obj, form) {
 }
 
 function formSubmit(event) {
-      event.preventDefault();
-      event.currentTarget.reset();
-      localStorage.removeItem('feedback-form-state');
+  event.preventDefault();
+  console.log(formData);
+  event.currentTarget.reset();
+  localStorage.removeItem(KEY);
 }
-

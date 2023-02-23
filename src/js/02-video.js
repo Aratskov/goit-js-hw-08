@@ -8,7 +8,9 @@ const player = new Player(iframe);
 const KEY = 'videoplayer-current-time';
 
 const loading = load(KEY);
-player.setCurrentTime(loading.seconds);
+if (loading) {
+  player.setCurrentTime(loading.seconds);
+}
 
 const onPlay = data => {
   save(KEY, data);

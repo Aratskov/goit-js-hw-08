@@ -2,9 +2,9 @@ import throttle from 'lodash.throttle';
 import storage from './storage';
 const { save, load } = storage;
 
-const KEY = 'feedback-form-state';
 const form = document.querySelector('.feedback-form');
 
+const KEY = 'feedback-form-state';
 let formData = {};
 const formParcel = load(KEY);
 
@@ -32,4 +32,5 @@ function formSubmit(event) {
   console.log(formData);
   event.currentTarget.reset();
   localStorage.removeItem(KEY);
+  formData = {}
 }
